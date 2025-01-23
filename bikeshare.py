@@ -13,10 +13,10 @@ def get_filters():
     """
     사용자로부터 분석할 도시, 월, 요일을 입력받아 반환합니다.
     """
-    print('안녕하세요! 미국 자전거 공유 데이터를 탐색해봅시다!')
+    print('안녕하세요! 미국 자전거 공유 데이터의 세계를 함께 탐험해봅시다!')
 
     city = input_valid("분석할 도시 이름을 입력하세요", list(CITY_DATA.keys()))
-    month = input_valid("필터링할 월을 입력하세요 ('all', 'january' ... 'december')",
+    month = input_valid("필터링할 월을 입력하세요 ('all', 'janua햣 ry' ... 'december')",
                         ['all', 'january', 'february', 'march', 'april', 'may', 'june',
                          'july', 'august', 'september', 'october', 'november', 'december'])
     day = input_valid("필터링할 요일을 입력하세요 ('all', 'monday' ... 'sunday')",
@@ -28,13 +28,15 @@ def get_filters():
 
 def input_valid(prompt, valid_options):
     """
+
     사용자가 유효한 값을 입력할 때까지 반복해서 입력받습니다.
+    
     """
     while True:
         user_input = input(f"{prompt} {valid_options}: ").lower()
         if user_input in valid_options:
             return user_input
-        print("잘못된 입력입니다. 다시 입력해주세요.")
+        print("잘못된 입력입니다. 제대로 입력해주세요.")
 
 def load_data(city, month, day):
     """
